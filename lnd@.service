@@ -1,20 +1,21 @@
 [Unit]
 Description=LND daemon
 After=network.target
+ConditionPathExists=/etc/lnd/%i.conf
 
 [Service]
 User=lnd
 Group=lnd
-ExecStart=/usr/bin/lnd --lnddir /var/lib/lnd --configfile=/etc/lnd/lnd.conf 
+ExecStart=/usr/bin/lnd --configfile=/etc/lnd/%i.conf
 Restart=always
 Type=simple
 KillMode=process
 TimeoutSec=280
 Restart=always
 RestartSec=60
-StandardOutput=null
-StandardError=null
 SyslogIdentifier=lnd
+UMask=0002
+
 # Hardening measures
 ####################
 # Provide a private /tmp and /var/tmp.

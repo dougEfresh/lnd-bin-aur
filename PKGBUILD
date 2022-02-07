@@ -1,10 +1,10 @@
-# Maintainer: Setpill
+# Maintainer: Douglas Chimento
 pkgname=lnd-bin
 _pkgname=lnd
 pkgver=0.14.2_beta
 _pkgver="${pkgver//_/-}"
 __pkgver="${_pkgver//\./\\\.}"
-pkgrel=1
+pkgrel=2
 pkgdesc="Lightning Network Daemon ⚡"
 arch=('x86_64')
 url="https://github.com/lightningnetwork/lnd"
@@ -18,7 +18,7 @@ source=(
     "lnd.user"
     "lnd.conf"
     "lnd-chown.hook"
-    "lnd.service"
+    "lnd@.service"
 )
 sha512sums=(
     '598b24c19ef8146a2d4a55106d8592c0dbbc6c6c67bb9294a4244791a87306a59a2be14cc738501fa44f3773618e376b47c74fb6b1295d31bd463889d8f10dbf'
@@ -40,7 +40,7 @@ package() {
   
   install -m 644 "${srcdir}/lnd.user" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
   install -m 640 "${srcdir}/lnd.conf" "${pkgdir}/etc/lnd/lnd.conf"
-  install -Dm 644 "${srcdir}/lnd.service" -t "${pkgdir}/usr/lib/systemd/system"
+  install -Dm 644 "${srcdir}/lnd@.service" -t "${pkgdir}/usr/lib/systemd/system"
 
   msg2 'Installing pacman hooks...'
   install -Dm 644 "$srcdir"/*.hook -t "$pkgdir/usr/share/libalpm/hooks"

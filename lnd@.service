@@ -8,7 +8,7 @@ User=lnd
 Group=lnd
 ExecStart=/usr/bin/lnd --configfile=/etc/lnd/%i.conf
 Restart=always
-Type=simple
+Type=notify
 KillMode=process
 TimeoutSec=280
 Restart=always

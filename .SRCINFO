@@ -1,7 +1,7 @@
 pkgbase = lnd-bin
 	pkgdesc = Lightning Network Daemon ⚡
 	pkgver = 0.14.2_beta
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/lightningnetwork/lnd
 	arch = x86_64
 	license = MIT
@@ -15,7 +15,7 @@ pkgbase = lnd-bin
 	source = lnd.user
 	source = lnd.conf
 	source = lnd-chown.hook
-	source = lnd.service
+	source = lnd@.service
 	sha512sums = 598b24c19ef8146a2d4a55106d8592c0dbbc6c6c67bb9294a4244791a87306a59a2be14cc738501fa44f3773618e376b47c74fb6b1295d31bd463889d8f10dbf
 	sha512sums = 9837c5d097a2838cf6dc992cc25b9e94946e401131e13e66a699077c3e2de1b89fb1de71027d46d7230464ebbad3ae8df118d459961b28995677d56fded451ca
 	sha512sums = SKIP
